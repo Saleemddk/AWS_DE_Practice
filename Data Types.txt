@@ -1,0 +1,106 @@
+Scenario#1
+
+student_names = ["Anil", "Bhavya", "Chandu", "Divya", "Esha"]
+marks = [78, 92, 65, 88, 74]
+print(student_names)
+print(marks)
+total_marks=sum(marks)
+average_marks=total_marks/len(marks)
+average_marks_rnd=round(average_marks,2)
+max_marks=max(marks)
+index_marks=marks.index(max_marks)
+index_name=student_names[index_marks]
+print("Total Marks:",total_marks)
+print("Average Marks:",average_marks_rnd)
+#print("Maximum Marks:",max_marks)
+#print("Index Marks:",index_marks)
+print("Topper:",index_name,"(",max_marks,")")
+
+*****************************************************************************************************
+Scenario#2
+
+price_list = {
+    "rice": 60,
+    "sugar": 45,
+    "oil": 150,
+    "salt": 20,
+    "wheat_flour": 40
+}
+
+item=input("Enter items name:")
+
+price=price_list.get(item)
+
+if price is not None:
+    print(f"price of {item} :{price}")
+else:
+    print("Item not found")
+
+if price_list.get(item) is None:
+    print("Item not found.Addint it to the list.")
+    price_list[item] = 100
+else:
+    print(f"{item} already exists in the list.")
+print(f"updated price list now has {len(price_list)} items")
+
+
+**********************************************************************************************************
+Scenario#3
+
+cart = [
+    {"product": "Shirt", "price": 599, "qty": 2},
+    {"product": "Shoes", "price": 1299, "qty": 1},
+    {"product": "Cap", "price": 199, "qty": 3}
+]
+
+
+empty=[]
+discount=10
+if sum(empty) >1000:
+    sum(empty)*discount/100
+for item in cart:
+    product=item["product"]
+    price=item["price"]
+    qty=item["qty"]
+    sales=price*qty
+    empty.append(sales)
+    #grand_total=sum(sales)
+    print(f"{product}: {price} x {qty} = {sales}")
+    #print(grand_total)
+print("Grand Total:",sum(empty))
+print("Discount Applied (10%):",sum(empty)*discount/100)
+print("Final Payable Amount:",sum(empty)-sum(empty)*discount/100)
+
+******************************************************************************************************
+
+Scenario#4
+
+required_skills = {"Python", "AWS", "SQL", "Docker"}
+
+employees = {
+    "Ramesh": {"Python", "SQL", "Excel"},
+    "Sneha": {"Python", "AWS", "SQL", "Docker"},
+    "Kiran": {"Java", "AWS"}
+}
+
+
+combined=set()
+for emp in employees:
+    employees
+    #print(employees[emp])
+    combined=combined |employees[emp]
+    matching = employees[emp] & required_skills
+    Not_Eligible = required_skills -employees[emp]
+    Fully_Eligible = required_skills & matching
+    #combined= set().union(* employees.values())
+
+    if required_skills - employees[emp]:
+        set()
+        print(f"{emp}->", "Not Eligible: | ", "Missing:",Not_Eligible)
+    else:
+        print(f"{emp}->", "Fully Eligible: | ", "Missing:",Not_Eligible)
+    #print(f"{emp}:",employees[emp])
+    #print(f"{emp}:",matching)
+   # print(f"{emp}->", "Not Eligible: | ", "Missing:",Not_Eligible)
+    #print(f"{emp}:", "Fully_Eligible:", Fully_Eligible)
+print(f"Team Combined Skills:",combined)
